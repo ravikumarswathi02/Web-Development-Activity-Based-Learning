@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumbs Bakery</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf5;
+            color: #49312e;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #7b3045;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd9a8;
+        }
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background:
+              linear-gradient(90deg, #fff0e5 35%, #fff0e5bb),
+              url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1400&q=85")
+              center/cover;
+        }
+
+        .hero-content {
+            max-width: 520px;
+        }
+
+        .hero h2 {
+            font-size: clamp(34px, 5vw, 52px);
+            color: #7b3045;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #a84460;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #642338;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 55px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #7b3045;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            margin-bottom: 30px;
+            color: #795e58;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px #00000012;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 22px #7b304530;
+        }
+
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card h3 {
+            color: #7b3045;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #b14b62;
+            font-size: 19px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .offer {
+            background: #f9dce0;
+            padding: 45px 8%;
+        }
+
+        .offer h2 {
+            color: #7b3045;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .custom {
+            background: #fff1e7;
+        }
+
+        .contact {
+            background: #fffaf5;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        footer {
+            background: #7b3045;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 45px 7%;
+                background-position: 60% center;
+            }
+
+            section {
+                padding: 40px 6%;
+            }
+
+            .header{
+                 background-color: #5b1717;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 gap: 15px;
+                 padding: 15px;
+                }
+
+                
+header {
+    background-color: #7b3045;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Bakery logo */
+.logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Bakery name */
+header h1 {
+    font-size: 28px;
+    color: white;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Navigation links */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #ffd59e;
+}
+
+/* Mobile screen */
+@media (max-width: 650px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+    
+<header>
+    <img
+        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
+        alt="Bakery Logo"
+        class="logo"
+    >
+
+    <h1>SN Bake House</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#offers">Offers</a>
+        <a href="#custom">Custom Cakes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Freshly Baked, Made with Love!</h2>
+            <p>
+                Discover delicious cakes, delightful pastries,
+                and cookies baked fresh every day.
+                Every celebration deserves something sweet!
+            </p>
+            <a href="#products" class="btn">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 class="section-title">Our Delicious Treats</h2>
+        <p class="intro">
+            Fresh ingredients, beautiful designs, unforgettable taste.
+        </p>
+
+        <div class="products">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
+                     alt="Chocolate celebration cake">
+                <div class="card-content">
+                    <h3>Chocolate Cake</h3>
+                    <p>Rich chocolate layers with creamy frosting.</p>
+                    <p class="price">₹550 / kg</p>
+                    <a href="#contact" class="btn">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80"
+                     alt="Creamy strawberry dessert">
+                <div class="card-content">
+                    <h3>Strawberry Pastry</h3>
+                    <p>Soft, fruity, and filled with sweet cream.</p>
+                    <p class="price">₹80 / piece</p>
+                    <a href="#contact" class="btn">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80"
+                     alt="Freshly baked cookies">
+                <div class="card-content">
+                    <h3>Choco Chip Cookies</h3>
+                    <p>Crunchy cookies with chocolate chips.</p>
+                    <p class="price">₹150 / box</p>
+                    <a href="#contact" class="btn">Order Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=600&q=80"
+                     alt="Colorful cupcakes">
+                <div class="card-content">
+                    <h3>Vanilla Cupcakes</h3>
+                    <p>Fluffy cupcakes topped with buttercream.</p>
+                    <p class="price">₹60 / piece</p>
+                    <a href="#contact" class="btn">Order Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="offer" id="offers">
+        <h2>🎉 Sweet Seasonal Offer!</h2>
+        <p>
+            Celebrate special moments with something delicious.
+        </p>
+        <p><strong>Get 15% OFF on selected cakes!</strong></p>
+        <p>Offer valid on selected products. Terms apply.</p>
+        <br>
+        <a href="#products" class="btn">Shop Our Treats</a>
+    </section>
+
+    <section class="custom" id="custom">
+        <h2 class="section-title">Your Dream Cake, Our Creation!</h2>
+        <p class="intro">
+            Birthday cakes, anniversary cakes, wedding cakes,
+            and personalized designs made just for you.
+        </p>
+        <a href="#contact" class="btn">Request a Custom Cake</a>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Visit Our Bakery</h2>
+        <p>📍 Address: Khuddusnagar Kedarewarapet, Vijayawada</p>
+        <p>📞 Phone: +91 93819 58668</p>
+        <p>✉️ Email: ravikumarswathi0212@gmail.com</p>
+        <p>🕒 Opening Hours: 9:00 AM – 9:00 PM</p>
+        <br>
+        <a href="ravikumarswathi0212@gmail.com"
+           class="btn">Email Us</a>
+    </section>
+
+    <footer>
+        <p>© 2026 SN Bake House | Baked with Love ❤️</p>
+    </footer>
+
+</body>
+</html>

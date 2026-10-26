@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar */
+        nav {
+            background: #14213d;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav h2 {
+            color: #00d4ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* Profile section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #14213d, #315b96);
+            color: white;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        .profile {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #00d4ff;
+            color: #14213d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 55px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border: 5px solid white;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero span {
+            color: #00d4ff;
+        }
+
+        .hero p {
+            margin: 10px 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00d4ff;
+            color: #14213d;
+            padding: 10px 22px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-4px);
+        }
+
+        /* General sections */
+        section {
+            padding: 55px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #14213d;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #00000012;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 22px #00000020;
+        }
+
+        .card h3 {
+            color: #1769aa;
+            margin-bottom: 10px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #14213d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #008db3;
+            transform: scale(1.08);
+        }
+
+        /* Contact section */
+        .contact {
+            text-align: center;
+            background: #e6f8ff;
+        }
+
+        .contact p {
+            margin: 10px 0;
+        }
+
+        footer {
+            background: #14213d;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive layout */
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 40px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>MyPortfolio</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHrQVKtHSEBJt3kr1bw4DgHKyxIOszYMWbIqRm3wTw2A&s=10" alt="Profile Picture" class="profile">
+        <h1>Hello, I'm <span>RAVI KUMAR.SWATHI</span></h1>
+        <p>B.Tech Student | Aspiring Software Developer</p>
+        <p>Welcome to my personal portfolio website!</p>
+        <a href="#about" class="btn">Explore My Portfolio</a>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about">
+            <p>
+                I am a passionate engineering student interested in technology,
+                programming, and web development. I enjoy learning new skills,
+                solving problems, and creating useful projects. My goal is to
+                become a skilled software developer and contribute to innovative
+                technology solutions.
+            </p>
+            <p><strong>Hobbies:</strong> Reading, listening to music,
+                drawing, and exploring technology.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Educational Qualifications</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>B.Tech</h3>
+                <p>College: NRIIT DTBU</p>
+                <p>Branch: CSM</p>
+                <p>Year: First Year</p>
+            </div>
+            <div class="card">
+                <h3>Intermediate</h3>
+                <p>College:SRI SARADA JUNIOR COLLEGE</p>
+                <p>Group: MPC </p>
+                <p>Year: 2024-2026</p>
+            </div>
+            <div class="card">
+                <h3>School Education</h3>
+                <p>School: FUTUREPATH [E.M] high SCHOOL
+                </p>
+                <p>Qualification: SSC</p>
+                <p>Year: 2023-2024</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Python</div>
+            <div class="skill">C Programming</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Communication</div>
+        </div>
+    </section>
+    <section id="resume">
+        <h2>My Resume</h2>
+        <div class="about">
+            <p>
+                My resume contains my educational background, technical
+                skills, projects, and achievements.
+            </p>
+            <a href="resume.pdf" class="btn" download>Download Resume</a>
+            <p><small>Place your resume PDF in the same folder and name it
+            resume.pdf.</small></p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p><strong>Email:</strong> ravikumarswathi02@gmail.com</p>
+        <p><strong>Phone:</strong> 9381958668</p>
+        <p><strong>Location:</strong> vijayawada, India</p>
+        <p>
+            <a href="mailto:ravikumarswathi02@gmail.com" class="btn">
+                Send Me an Email
+            </a>
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 RAVI KUMAr.SWATHI| Personal Portfolio</p>
+        <p>Designed with HTML and CSS</p>
+    </footer>
+
+</body>
+</html>
